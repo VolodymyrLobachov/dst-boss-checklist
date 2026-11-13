@@ -1,0 +1,42 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+    "runtime.version": "Lua 5.1",
+    "runtime.path": [
+        "scripts/?.lua",
+        "tests/?.lua",
+        "?.lua"
+    ],
+    "workspace.checkThirdParty": false,
+    "diagnostics.globals": [
+        "GLOBAL",
+        "modimport",
+        "GetModConfigData",
+        "AddClassPostConstruct",
+        "AddComponentPostInit",
+        "AddPrefabPostInit",
+        "AddModRPCHandler",
+        "AddShardModRPCHandler",
+        "SendModRPCToServer",
+        "SendModRPCToShard",
+
+        "Class",
+        "subfmt",
+        "GetInventoryItemAtlas",
+        "TheWorld",
+        "TheNet",
+        "TheSim",
+        "STRINGS",
+        "TUNING",
+        "LootTables",
+
+        "UICOLOURS",
+        "CHATFONT",
+        "HEADERFONT",
+        "ANCHOR_LEFT",
+        "ANCHOR_RIGHT",
+        "ANCHOR_MIDDLE",
+        "ANCHOR_BOTTOM",
+        "SCALEMODE_PROPORTIONAL",
+        "MAX_HUD_SCALE"
+    ]
+}
