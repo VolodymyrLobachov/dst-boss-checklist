@@ -9,7 +9,7 @@ Open the book (default key: B, or the book button in the bottom-right corner) to
 - health and damage
 - whether it has been defeated in this world (shared by all players and shards)]]
 author = "Renco"
-version = "0.4.0"
+version = "0.5.0"
 
 api_version = 10
 dst_compatible = true
@@ -38,20 +38,22 @@ configuration_options =
     {
         name = "toggle_key",
         label = "Open/close key",
-        hover = "Key that opens and closes the Boss Checklist book.",
+        hover = "Key that opens and closes the Boss Checklist book. Each player sets this for themselves.",
         options = key_options,
         default = "B",
+        client = true,
     },
     {
         name = "show_tab",
         label = "Show book button",
-        hover = "Show the book button in the bottom-right corner of the screen.",
+        hover = "Show the book button in the bottom-right corner of the screen. Each player sets this for themselves.",
         options =
         {
             { description = "Yes", data = true },
             { description = "No", data = false },
         },
         default = true,
+        client = true,
     },
     {
         name = "reveal_mode",

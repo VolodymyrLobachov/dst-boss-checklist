@@ -50,6 +50,21 @@ AddComponentPostInit("playercontroller", function(self)
     end
 end)
 
+-- Esc closes the book instead of opening the pause menu, as the game does for the crafting menu.
+AddClassPostConstruct("screens/playerhud", function(hud)
+    local on_control = hud.OnControl
+    function hud:OnControl(control, down)
+        if not down and control == G.CONTROL_PAUSE and not G.TheInput:ControllerAttached() then
+            local book = get_book(self)
+            if book ~= nil and book:IsOpen() then
+                book:Close()
+                return true
+            end
+        end
+        return on_control(self, control, down)
+    end
+end)
+
 local function is_hud_active()
     local screen = G.TheFrontEnd:GetActiveScreen()
     return screen ~= nil and screen.name == "HUD"

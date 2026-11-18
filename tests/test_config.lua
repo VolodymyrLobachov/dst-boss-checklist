@@ -41,6 +41,18 @@ return function(T)
         T.equal(Config.reveal_count, 2)
     end)
 
+    T.test("each player picks their own key and button, the host decides the game rules", function()
+        Config.load(function(name, get_local_config)
+            local player = { toggle_key = "K", show_tab = false }
+            local host = { toggle_key = "B", show_tab = true, reveal_mode = "all", manual_marking = "admins" }
+            return (get_local_config and player or host)[name]
+        end)
+        T.equal(Config.toggle_key, "K")
+        T.equal(Config.show_tab, false)
+        T.equal(Config.reveal_mode, "all")
+        T.equal(Config.manual_marking, "admins")
+    end)
+
     T.test("manual marking: nobody", function()
         load({ manual_marking = "none" })
         T.equal(Config.can_mark(false), false)

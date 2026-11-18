@@ -12,6 +12,13 @@ local DEFAULTS =
     announce_kills = true,
 }
 
+-- Set by each player for themselves (`client = true` in modinfo).
+local CLIENT_OPTIONS =
+{
+    toggle_key = true,
+    show_tab = true,
+}
+
 local Config =
 {
     RPC_NAMESPACE = "BossChecklist",
@@ -21,11 +28,11 @@ for name, value in pairs(DEFAULTS) do
     Config[name] = value
 end
 
--- get_option: fn(name) returning the saved value of a mod option, or nil (GetModConfigData).
+-- get_option: fn(name, get_local_config) returning the saved value of a mod option, or nil (GetModConfigData).
 function Config.load(get_option)
     assert(type(get_option) == "function", "Config.load expects a function")
     for name, default in pairs(DEFAULTS) do
-        local value = get_option(name)
+        local value = get_option(name, CLIENT_OPTIONS[name] == true)
         -- Explicit nil check: `false` is a valid saved value.
         if value == nil then
             value = default

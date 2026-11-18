@@ -2,7 +2,7 @@
 
 A checklist and guide book for DST bosses, inspired by Terraria's Boss Checklist.
 
-- **Book**: press **B**, or click the book button in the bottom-right corner (left of the map button). The book opens in the centre of the screen.
+- **Book**: press **B**, or click the book button in the bottom-right corner (left of the map button). The book opens in the centre of the screen; **Esc** closes it. The key and the button are set by each player for themselves (Mods → Boss Checklist → client settings); every other option is set by the host.
 - **Manual marking** of bosses is off by default; it can be enabled for admins or everyone in the mod settings.
 - **Left page**: all 38 bosses the game's Scrapbook marks as bosses, plus three mini-bosses the game does not mark (Varg, Ewecus, Poison Birchnut Tree), in progression order, with a check mark when defeated.
 - **Progression reveal**: defeated bosses are always shown. Of the undefeated ones, only the next two are shown (so you can skip a boss you can't reach yet; change this with **Bosses shown ahead**); the rest appear as a black silhouette with "???" until they are defeated. Mini-bosses that appear by chance (Spider Queen, Treeguard, Lord of the Fruit Flies, Poison Birchnut Tree, Ewecus, Varg) are always shown, in blue, and never take one of those two places (change this with **Mini-bosses**). Killing a boss out of order reveals it too. Set **Boss reveal** to **All visible** to turn this off.
